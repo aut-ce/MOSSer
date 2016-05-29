@@ -1,4 +1,7 @@
 #!/bin/bash
+
+mkdir out
+
 for filename in *.zip; do
   better_name=$(echo "$filename" | sed 's, ,\ ,g')
   echo unzip "$better_name" -d "out/$better_name"
