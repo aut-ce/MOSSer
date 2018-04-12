@@ -16,6 +16,7 @@ for filename in *.rar; do
   echo unrar -inul x "$better_name" "out/$better_name"
   unrar x "$better_name" "out/$better_name"
 done
+find out -name __MACOSX -type d -print0|xargs -0 rm -r --
 
 files=$(find out/ -name "*.$EXT")
 mkdir final
@@ -29,6 +30,6 @@ for filename in $files; do
   mv "$filename" $folder_name
 done
 
-./moss.pl -l $LANG -d final/out/**/**/**/**/**/**/**.$EXT
+./moss.pl -l $LANG -d `find . -name *.$EXT`
 
 
