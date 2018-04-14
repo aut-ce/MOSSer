@@ -21,7 +21,7 @@ find out -name __MACOSX -type d -print0|xargs -0 rm -r --
 files=$(find out/ -name "*.$EXT")
 mkdir final
 
-IFS=$'\n' 
+IFS=$'\n'
 for filename in $files; do
   echo $filename
   better_name=$(echo "$filename" | sed  -r "s/([^a-zA-Z0-9\/\.])//g")
@@ -30,6 +30,8 @@ for filename in $files; do
   mv "$filename" $folder_name
 done
 
-./moss.pl -l $LANG -d `find . -name *.$EXT`
+./moss.pl -l $LANG -d `find final/out -name *.$EXT -type f -exec grep -Iq . {} \; -and  -print`
+
+
 
 
