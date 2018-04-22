@@ -31,7 +31,3 @@ for filename in $files; do
 done
 
 ./moss.pl -l $LANG -d `find final/out -name *.$EXT -type f -exec grep -Iq . {} \; -and  -print`
-
-
-
-
