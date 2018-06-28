@@ -29,7 +29,7 @@ mkdir final
 IFS=$'\n'
 for filename in $files; do
   echo $filename
-  better_name=$(echo "$filename" | sed  "s/([^a-zA-Z0-9\/\.])//g")
+  better_name=$(echo "$filename" | sed -E  "s/([^a-zA-Z0-9\/\.])//g")
   folder_name=$(dirname final/$better_name)
   mkdir -p "$folder_name"
   mv "$filename" $folder_name
