@@ -2,3 +2,5 @@
 !.gitignore
 !run.sh
 !moss.pl
+!cleanup.sh
+!README.md
