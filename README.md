@@ -20,3 +20,8 @@ git clone https://github.com/AUT-CEIT/MOSSer.git
 ```
 
 2. Download student submissions from the Query based on their student ID and extract it under the `input` directory.
+3. Run the script and find the cheaters :joy:
+
+```sh
+./run.sh
+```
