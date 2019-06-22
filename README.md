@@ -1,6 +1,6 @@
 # MOSSer
 
-> In the memory of our dear friend and colleague @Tabrizian who first created this awesome scripts
+> In the memory of our dear friend and colleague Iman Tabrizian who first created this awesome scripts
 
 ## Introduction
 A bash script to make [MOSS](https://theory.stanford.edu/~aiken/moss/) usable in Amirkabir University of Tech.
