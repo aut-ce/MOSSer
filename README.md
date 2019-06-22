@@ -1,11 +1,17 @@
 # MOSSer
-A bash script to make MOSS usable :)
+## Introduction
+A bash script to make [MOSS](https://theory.stanford.edu/~aiken/moss/) usable in Amirkabir University of Tech.
 
-# Usage
+Project dilevry process is a critical process in academic environments.
+First of all we recommended you to use [Quera](https://quera.ir/dashboard/)
+website for project submission and provide the website with
+your students identification. Then before the project dilevry deadline use this repository to detect
+the sutdents who cheat from each other.
 
-You have to follow these steps in order to use this bash script.
+## Usage
 
-1. Download one archive from the moodle website containing zip file of all of the Homework.
-2. Clone this project into some directory.
-3. Extract the archive in the first step into the same directory that you have cloned this project.
-4. Now you're job is simple, run ```./run.sh``` in the place where you have cloned the project.
+1. Clone this repository
+
+```sh
+git clone https://github.com/AUT-CEIT/MOSSer.git
+```
