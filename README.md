@@ -19,4 +19,4 @@ the students who cheat from each other.
 git clone https://github.com/AUT-CEIT/MOSSer.git
 ```
 
-2. Download student submissions from the Query based on their student ID and put it under the `input` directory.
+2. Download student submissions from the Query based on their student ID and extract it under the `input` directory.
