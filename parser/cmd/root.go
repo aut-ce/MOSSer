@@ -7,7 +7,6 @@ import (
 
 	"github.com/aut-ceit/mosser/parser/moss"
 	"github.com/spf13/cobra"
-	"golang.org/x/net/html"
 )
 
 // Execute run the root command
@@ -23,56 +22,10 @@ func Execute() {
 				return
 			}
 			defer resp.Body.Close()
-			z := html.NewTokenizer(resp.Body)
-			var tr bool
-			var a bool
-			var td int
-			var match moss.Match
-			var matches []moss.Match
-			for {
-				tt := z.Next()
-				if tt == html.ErrorToken {
-					break
-				}
-				t := z.Token()
-				switch tt {
-				case html.StartTagToken:
-					switch t.Data {
-					case "tr":
-						tr = true
-					case "td":
-						if tr {
-							td++
-							match = moss.Match{}
-						}
-					case "a":
-						if td > 0 {
-							a = true
-						}
-					}
-				case html.EndTagToken:
-					switch t.Data {
-					case "tr":
-						tr = false
-						td = 0
-						matches = append(matches, match)
-					case "a":
-						if td > 0 {
-							a = false
-						}
-					}
-				case html.TextToken:
-					if tr && a {
-						switch td {
-						case 1:
-							fmt.Println(t.Data)
-							match.File1 = t.Data
-						case 2:
-							fmt.Println(t.Data)
-							match.File2 = t.Data
-						}
-					}
-				}
+			matches, err := moss.ExtractMatches(resp.Body)
+			if err != nil {
+				fmt.Println(err)
+				return
 			}
 			fmt.Println(matches)
 		},
