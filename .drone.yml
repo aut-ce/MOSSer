@@ -2,6 +2,10 @@ kind: pipeline
 name: default
 
 steps:
+  - name: fetch
+    image: docker:git
+    commands:
+      - git fetch --tags
   - name: test
     image: golang
     commands:
@@ -11,7 +15,7 @@ steps:
   - name: release
     image: golang
     environment:
-      github_token:
+      GITHUB_TOKEN:
         from_secret: github_token
     commands:
       - cd parser
