@@ -2,10 +2,6 @@ kind: pipeline
 name: default
 
 steps:
-  - name: clone
-    image: plugins/git
-    tags: true
-
   - name: test
     image: golang
     commands:
