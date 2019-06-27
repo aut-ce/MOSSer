@@ -2,18 +2,18 @@ kind: pipeline
 name: default
 
 steps:
-  clone:
+  - name: clone
     image: plugins/git
     tags: true
 
-  test:
+  - name: test
     image: golang
     commands:
       - cd parser
       - go test ./... -race
 
-  release:
-    image: golang:1.10
+  - name: release
+    image: golang
     environment:
       github_token:
         from_secret: github_token
