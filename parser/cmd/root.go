@@ -5,15 +5,10 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/aut-ceit/mosser/parser/moss"
 	"github.com/spf13/cobra"
 	"golang.org/x/net/html"
 )
-
-// Match represents a single match in moss result
-type Match struct {
-	File1 string
-	File2 string
-}
 
 // Execute run the root command
 func Execute() {
@@ -32,8 +27,8 @@ func Execute() {
 			var tr bool
 			var a bool
 			var td int
-			var match Match
-			var matches []Match
+			var match moss.Match
+			var matches []moss.Match
 			for {
 				tt := z.Next()
 				if tt == html.ErrorToken {
@@ -48,7 +43,7 @@ func Execute() {
 					case "td":
 						if tr {
 							td++
-							match = Match{}
+							match = moss.Match{}
 						}
 					case "a":
 						if td > 0 {
