@@ -24,6 +24,7 @@ import (
 type Match struct {
 	File1      string
 	File2      string
+	Link       string
 	LinesMatch int
 }
 
@@ -57,6 +58,8 @@ func ExtractMatches(input io.Reader) ([]Match, error) {
 				var match Match
 
 				match.File1 = td.FirstChild.FirstChild.Data
+
+				match.Link = td.FirstChild.Attr[0].Val
 
 				match.File2 = td.NextSibling.FirstChild.FirstChild.Data
 
