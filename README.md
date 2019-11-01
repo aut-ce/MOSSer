@@ -1,5 +1,5 @@
 # MOSSer
-[![Drone (cloud)](https://img.shields.io/drone/build/aut-ceit/mosser.svg?style=flat-square)](https://cloud.drone.io/aut-ceit/mosser)
+[![Drone (cloud)](https://img.shields.io/drone/build/aut-ce/mosser.svg?style=flat-square)](https://cloud.drone.io/aut-ce/mosser)
 
 > In the memory of our dear friend and colleague Iman Tabrizian who first created this awesome scripts
 
