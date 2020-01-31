@@ -22,11 +22,16 @@ for student in $(ls ./input); do
                 for problem in $(ls ./input/$student); do
                         i=$((i+1))
                         printf "\t problem [$problem]\n"
+                        mkdir -p "./output/${student}_$i"
                         # unzip each problem submission
                         for sub in $(ls ./input/$student/$problem/*.zip 2> /dev/null); do
                                 echo $sub
                                 printf "\t\t unzip $student - $problem [$i]\n"
                                 unzip -q "$sub" -d "./output/${student}_$i"
+                        done
+                        # move raw files
+                        for f in $(ls ./input/$student/$problem/*.$EXT 2> /dev/null); do
+                                cp $f "./output/${student}_$i/"
                         done
                 done
                 IFS="$OIFS"
