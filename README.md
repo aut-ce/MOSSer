@@ -6,11 +6,7 @@
 ## Introduction
 A bash script to make [MOSS](https://theory.stanford.edu/~aiken/moss/) usable in Amirkabir University of Tech.
 
-Project dilevry process is a critical process in academic environments.
-First of all, we recommended you to use [Quera](https://quera.ir/dashboard/)
-website for project submission and provide the website with
-your students' identification. Then before the project delivery deadline use this repository to detect
-the students who cheat from each other.
+The project delivery process is critical in academic environments. First of all, we recommended you to use the [Quera](https://quera.ir/dashboard/) website for project submission and provide the website with your students' identification. Then before the project delivery deadline, use this repository to detect the students who cheat from each other.
 
 ## Usage
 
